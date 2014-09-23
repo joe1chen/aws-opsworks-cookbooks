@@ -17,6 +17,8 @@
       reports << 'passenger_status_report'
     elsif node[:opsworks][:rails_stack][:name] == 'nginx_unicorn'
       reports << 'nginx_status_report'
+    elsif node[:opsworks][:rails_stack][:name] == 'nginx_rainbows'
+      reports << 'nginx_status_report'
     else
     end
   end

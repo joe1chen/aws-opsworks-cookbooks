@@ -57,6 +57,31 @@ node[:deploy].each do |application, deploy|
       action :run
     end
 
+  when 'nginx_rainbows'
+    include_recipe 'nginx::service'
+
+    link "/etc/nginx/sites-enabled/#{application}" do
+      action :delete
+      only_if do
+        ::File.exists?("/etc/nginx/sites-enabled/#{application}")
+      end
+      notifies :restart, "service[nginx]"
+    end
+
+    file "/etc/nginx/sites-available/#{application}" do
+      action :delete
+      only_if do
+        ::File.exists?("/etc/nginx/sites-available/#{application}")
+      end
+    end
+
+    execute 'stop rainbows and restart nginx' do
+      command "sleep #{deploy[:sleep_before_restart]} && \
+              #{deploy[:deploy_to]}/shared/scripts/rainbows stop"
+      notifies :restart, "service[nginx]"
+      action :run
+    end
+
   else
     raise 'Unsupported Rails stack'
   end
