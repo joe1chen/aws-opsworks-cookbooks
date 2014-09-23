@@ -1,3 +1,12 @@
+# Rainbows-specific Configuration Block
+Rainbows! do
+  use :<%= node[:rainbows][:use] %>
+  worker_connections <%= node[:rainbows][:worker_connections] %>
+  keepalive_timeout <%= node[:rainbows][:keepalive_timeout] %>
+  keepalive_requests <%= node[:rainbows][:keepalive_requests] %>
+end
+
+# The rest of the Unicorn configuration...
 worker_processes <%= node[:rainbows][:worker_processes] %>
 
 user "<%= @deploy[:user]%>"

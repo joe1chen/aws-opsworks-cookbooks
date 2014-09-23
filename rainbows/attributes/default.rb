@@ -16,6 +16,7 @@
 
 include_attribute 'rails::rails'
 
+# Common Unicorn/Rainbows settings
 default[:rainbows][:worker_processes] = node[:rails][:max_pool_size] ? node[:rails][:max_pool_size] : 4
 default[:rainbows][:backlog] = 1024
 default[:rainbows][:timeout] = 60
@@ -26,5 +27,11 @@ default[:rainbows][:tcp_nopush] = false
 default[:rainbows][:tries] = 5
 default[:rainbows][:delay] = 0.5
 default[:rainbows][:accept_filter] = "httpready"
+
+# Rainbows-specific settings
+default[:rainbows][:worker_connections] = 50
+default[:rainbows][:use] = 'Base' # Concurrency model. Default is no concurrency.
+default[:rainbows][:keepalive_timeout] = 5
+default[:rainbows][:keepalive_requests] = 100
 
 include_attribute "rainbows::customize"
