@@ -114,7 +114,9 @@ if node[:opsworks][:layers].has_key?('monitoring-master')
       when 'nginx_puma'
         include_recipe 'opsworks_ganglia::monitor-nginx'
       end
-
+        
+    when 'puma-rails'
+      include_recipe 'opsworks_ganglia::monitor-nginx'
     end
   end
 else
