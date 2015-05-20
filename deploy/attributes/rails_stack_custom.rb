@@ -18,7 +18,7 @@ default[:opsworks][:rails_stack][:name] = "apache_passenger"
 
 # Override the stack name.
 if node[:opsworks][:rails_stack] && node[:opsworks][:rails_stack][:name_override]
-  node[:opsworks][:rails_stack][:name] = node[:opsworks][:rails_stack][:name_override]
+  node.override[:opsworks][:rails_stack][:name] = node[:opsworks][:rails_stack][:name_override]
 end
 
 case node[:opsworks][:rails_stack][:name]
