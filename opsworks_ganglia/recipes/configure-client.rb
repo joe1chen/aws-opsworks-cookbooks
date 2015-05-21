@@ -52,7 +52,7 @@ if node[:opsworks][:layers].has_key?('monitoring-master')
 
   if node[:opsworks][:instance][:layers].any?{ |layer|
     ['php-app', 'monitoring-master'].include?(layer)
-  } || (node[:opsworks][:instance][:layers].include?('rails-app') && node[:opsworks][:rails_stack][:name] == 'apache_passenger')
+  } || ((node[:opsworks][:instance][:layers].include?('rails-app') || node[:opsworks][:instance][:layers].include?('puma-rails')) && node[:opsworks][:rails_stack][:name] == 'apache_passenger')
 
     Dir.glob("#{node[:apache][:log_dir]}/*-ganglia.log").each do |ganglia_log|
       cron "Ganglia Apache Monitoring #{ganglia_log}" do

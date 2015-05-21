@@ -217,7 +217,7 @@
       "title": "MySQL delete"
     }
     <% end %>
-    <% if @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^php-app|^monitoring-master/).empty?} %>
+    <% if @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^puma-rails|^php-app|^monitoring-master/).empty?} %>
     ,
     {
       "aggregate_graph": "true",
@@ -228,7 +228,7 @@
       ],
       "host_regex": [
         {
-          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^php-app|^monitoring-master/).empty?}.join('|') %>"
+          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^puma-rails|^php-app|^monitoring-master/).empty?}.join('|') %>"
         }
       ],
       "graph_type": "line",
@@ -244,7 +244,7 @@
       ],
       "host_regex": [
         {
-          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^php-app|^monitoring-master/).empty?}.join('|') %>"
+          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^puma-rails|^php-app|^monitoring-master/).empty?}.join('|') %>"
         }
       ],
       "graph_type": "line",
@@ -260,7 +260,7 @@
       ],
       "host_regex": [
         {
-          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^php-app|^monitoring-master/).empty?}.join('|') %>"
+          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^puma-rails|^php-app|^monitoring-master/).empty?}.join('|') %>"
         }
       ],
       "graph_type": "line",
@@ -276,7 +276,7 @@
       ],
       "host_regex": [
         {
-          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^php-app|^monitoring-master/).empty?}.join('|') %>"
+          "regex": "<%= @instances.keys.select{|nickname| !@instances[nickname].grep(/^rails-app|^puma-rails|^php-app|^monitoring-master/).empty?}.join('|') %>"
         }
       ],
       "graph_type": "line",

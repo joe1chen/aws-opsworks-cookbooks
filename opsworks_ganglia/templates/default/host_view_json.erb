@@ -11,7 +11,7 @@
     reports << 'apache_worker_report'
     reports << 'apache_response_time_report'
   end
-  if @layers.include?("rails-app")
+  if @layers.include?("rails-app") || @layers.include?("puma-rails")
     if node[:opsworks][:rails_stack][:name] == 'apache_passenger'
       reports << 'passenger_memory_stats_report'
       reports << 'passenger_status_report'
