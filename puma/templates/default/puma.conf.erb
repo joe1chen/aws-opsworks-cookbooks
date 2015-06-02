@@ -23,6 +23,11 @@ threads <%= node[:puma][:threads_min] %>, <%= node[:puma][:threads_max] %>
 rackup "<%= @deploy[:deploy_to] %>/current/config.ru"
 environment "<%= @deploy[:rails_env] %>"
 
+# Set environment variables
+<% @environment.each do |key, value| %>
+ENV['<%= key %>'] = "<%= value %>"
+<% end %>
+
 # Bind to a unix socket without umask definitions
 bind "unix://<%= @deploy[:deploy_to] %>/shared/sockets/puma.sock"
 
