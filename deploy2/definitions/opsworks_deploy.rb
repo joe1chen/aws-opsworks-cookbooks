@@ -193,7 +193,7 @@ define :opsworks_deploy do
   template "/etc/logrotate.d/opsworks_app_#{application}" do
     backup false
     source "logrotate.erb"
-    cookbook 'deploy'
+    cookbook 'deploy2'
     owner "root"
     group "root"
     mode 0644

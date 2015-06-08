@@ -4,5 +4,5 @@ maintainer  "AWS OpsWorks"
 license     "Apache 2.0"
 version     "1.0.0"
 
-depends 'deploy'
+depends 'deploy2'
 depends 'opsworks_commons'

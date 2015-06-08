@@ -14,7 +14,7 @@
 # See also: http://docs.aws.amazon.com/opsworks/latest/userguide/customizing.html
 ###
 
-include_attribute 'deploy'
+include_attribute 'deploy2'
 
 default[:opsworks_nodejs][:version] = '0.10.38'
 default[:opsworks_nodejs][:pkgrelease] = '1'
