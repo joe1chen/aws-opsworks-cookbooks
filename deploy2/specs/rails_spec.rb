@@ -1,7 +1,7 @@
 require 'minitest/spec'
 require 'yaml'
 
-describe_recipe 'deploy::rails' do
+describe_recipe 'deploy2::rails' do
   include MiniTest::Chef::Resources
   include MiniTest::Chef::Assertions
 

@@ -1,6 +1,6 @@
 require 'minitest/spec'
 
-describe_recipe 'deploy::java' do
+describe_recipe 'deploy2::java' do
   include MiniTest::Chef::Resources
   include MiniTest::Chef::Assertions
 

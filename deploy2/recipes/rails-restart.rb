@@ -1,9 +1,9 @@
 #
-# Cookbook Name:: deploy
+# Cookbook Name:: deploy2
 # Recipe:: rails-restart
 #
 
-include_recipe "deploy"
+include_recipe "deploy2"
 
 node[:deploy].each do |application, deploy|
   if deploy[:application_type] != 'rails'

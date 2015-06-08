@@ -3,7 +3,7 @@
 # Recipe:: php-restart
 #
 
-include_recipe "deploy"
+include_recipe "deploy2"
 include_recipe "apache2::service"
 
 node[:deploy].each do |application, deploy|

@@ -5,7 +5,7 @@ license     "Apache 2.0"
 version     "1.0.0"
 
 depends "apache2"
-depends "deploy"
+depends "deploy2"
 depends "nginx"
 
 recipe "rails::configure", "Re-configure a Rails application"

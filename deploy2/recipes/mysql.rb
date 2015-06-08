@@ -1,5 +1,5 @@
 require 'resolv'
-include_recipe 'deploy'
+include_recipe 'deploy2'
 
 node[:deploy].each do |application, deploy|
   next if deploy[:database].nil? || deploy[:database].empty?

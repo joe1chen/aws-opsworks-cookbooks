@@ -1,9 +1,9 @@
 #
-# Cookbook Name:: deploy
+# Cookbook Name:: deploy2
 # Recipe:: php
 #
 
-include_recipe 'deploy'
+include_recipe 'deploy2'
 include_recipe "mod_php5_apache2"
 include_recipe "mod_php5_apache2::php"
 

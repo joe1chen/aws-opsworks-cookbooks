@@ -5,10 +5,10 @@
 # codebase and make it easier to upgrade.
 #
 # However, you should not edit customize.rb directly. Instead, create
-# "deploy/attributes/customize.rb" in your cookbook repository and
+# "deploy2/attributes/customize.rb" in your cookbook repository and
 # put the overrides in YOUR customize.rb file.
 #
-# Do NOT create an 'deploy/attributes/logrotate.rb' in your cookbooks. Doing so
+# Do NOT create an 'deploy2/attributes/logrotate.rb' in your cookbooks. Doing so
 # would completely override this file and might cause upgrade issues.
 #
 # See also: http://docs.aws.amazon.com/opsworks/latest/userguide/customizing.html
@@ -17,4 +17,4 @@
 default[:logrotate][:rotate] = 30
 default[:logrotate][:dateformat] = false # set to '-%Y%m%d' to have date formatted logs
 
-include_attribute "deploy::customize"
+include_attribute "deploy2::customize"
