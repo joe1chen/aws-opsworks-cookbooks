@@ -5,10 +5,10 @@
 # codebase and make it easier to upgrade.
 #
 # However, you should not edit customize.rb directly. Instead, create
-# "rails/attributes/customize.rb" in your cookbook repository and
+# "rails2/attributes/customize.rb" in your cookbook repository and
 # put the overrides in YOUR customize.rb file.
 #
-# Do NOT create an 'rails/attributes/rails.rb' in your cookbooks. Doing so
+# Do NOT create an 'rails2/attributes/rails.rb' in your cookbooks. Doing so
 # would completely override this file and might cause upgrade issues.
 #
 # See also: http://docs.aws.amazon.com/opsworks/latest/userguide/customizing.html
@@ -18,4 +18,4 @@ include_attribute "deploy2"
 
 default[:rails][:version] = "2.3.5"
 
-include_attribute "rails::customize"
+include_attribute "rails2::customize"

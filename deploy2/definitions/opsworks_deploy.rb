@@ -113,7 +113,7 @@ define :opsworks_deploy do
             :consult_gemfile => node[:deploy][application][:auto_bundle_on_deploy]
           )
           template "#{node[:deploy][application][:deploy_to]}/shared/config/database.yml" do
-            cookbook "rails"
+            cookbook "rails2"
             source "database.yml.erb"
             mode "0660"
             owner node[:deploy][application][:user]

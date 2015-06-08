@@ -6,7 +6,7 @@ define :opsworks_rails do
 
   # write out memcached.yml
   template "#{deploy[:deploy_to]}/shared/config/memcached.yml" do
-    cookbook "rails"
+    cookbook "rails2"
     source "memcached.yml.erb"
     mode "0660"
     owner deploy[:user]

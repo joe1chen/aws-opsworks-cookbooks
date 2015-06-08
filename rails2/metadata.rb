@@ -1,4 +1,4 @@
-name        "rails"
+name        "rails2"
 description "Installs Rails"
 maintainer  "AWS OpsWorks"
 license     "Apache 2.0"
@@ -8,7 +8,7 @@ depends "apache2"
 depends "deploy2"
 depends "nginx"
 
-recipe "rails::configure", "Re-configure a Rails application"
+recipe "rails2::configure", "Re-configure a Rails application"
 
 attribute "rails",
   :display_name => "Rails",
